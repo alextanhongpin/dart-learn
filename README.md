@@ -2,6 +2,32 @@
 Learning Dart, and Flutter
 
 
+## Installation
+
+```bash
+$ brew tap dart-lang/dart
+$ brew install dart
+
+$ pub global activate stagehand
+```
+
+## Creating a new project with stagehand
+
+```bash
+$ mkdir cli
+$ cd cli
+$ stagehand console-full
+
+# Get dependencies
+$ pub get
+
+# Run the app
+$ dart bin/main.dart
+
+# Run test
+$ pub run test
+```
+
 ## Basics
 
 ```dart
