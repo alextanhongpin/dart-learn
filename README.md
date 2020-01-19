@@ -288,3 +288,49 @@ void main() {
   print(cart.shorthandSum(10, 20));
 }
 ```
+
+
+## Implementing Callable
+
+```dart
+class CallableClassWithoutInput {
+  String input = "Callable class";
+  void call() {
+    print(input);
+  }
+}
+
+class CallableClassWithInput {
+  void call(String input) {
+    print(input);
+  }
+}
+
+void main() {
+  var call1 = CallableClassWithoutInput();
+  call1();
+  var call2 = CallableClassWithInput();
+  call2("hello world");
+}
+```
+
+## Future
+
+```dart
+Future<String> checkingStatus () {
+  Future<String> result = Future.delayed(Duration(seconds: 1), () {
+    return "OK";
+  });
+  
+  return result;
+}
+
+void main() async {
+  checkingStatus().then((result) {
+    print(result);
+  });
+  
+  var result = await checkingStatus();
+  print(result);
+}
+```
