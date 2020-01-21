@@ -334,3 +334,27 @@ void main() async {
   print(result);
 }
 ```
+
+## Stream
+
+```dart
+Stream<int> countStream(int to) async* {
+  for (int i = 0; i < to; i++) {
+    yield i;
+  }
+}
+
+Future<int> sumStream(Stream<int> stream) async {
+  var sum = 0;
+  await for (var i in stream) {
+    sum += i;
+  }
+  return sum;
+}
+
+void main() async {
+  var stream = countStream(10);
+  var sum = await sumStream(stream);
+  print(sum);
+}
+```
